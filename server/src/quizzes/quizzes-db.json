@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Quiz #1 Title",
+    "description": "Quiz #1 description",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true
+  },
+  {
+    "id": 2,
+    "title": "Quiz #2 Title",
+    "description": "Quiz #2 description",
+    "shuffleQuestions": false,
+    "shuffleAnswers": false
+  },
+  {
+    "id": 3,
+    "title": "Quiz #3 Title",
+    "description": "Quiz #3 description",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true
+  },
+  {
+    "id": 4,
+    "title": "Quiz #4 Title",
+    "description": "Quiz #4 description",
+    "shuffleQuestions": false,
+    "shuffleAnswers": false
+  },
+  {
+    "id": 5,
+    "title": "Quiz #5 Title",
+    "description": "Quiz #5 description",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true
+  },
+  {
+    "id": 6,
+    "title": "Quiz #6 Title",
+    "description": "Quiz #6 description",
+    "shuffleQuestions": false,
+    "shuffleAnswers": false
+  },
+  {
+    "id": 7,
+    "title": "Quiz #7 Title",
+    "description": "Quiz #7 description",
+    "shuffleQuestions": true,
+    "shuffleAnswers": true
+  }
+]
