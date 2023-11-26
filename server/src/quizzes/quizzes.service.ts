@@ -12,4 +12,10 @@ export class QuizzesService {
     const quiz = quizzes.find((quiz) => quiz.id === quizId);
     return quiz.questions;
   }
+
+  toggleShuffleAnswers(quizId) {
+    const quiz = quizzes.find((quiz) => quiz.id === quizId);
+    quiz.shuffleAnswers = !quiz.shuffleAnswers;
+    return quiz;
+  }
 }

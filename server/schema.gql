@@ -19,3 +19,7 @@ type Quiz {
 type Query {
   quizzes: [Quiz!]!
 }
+
+type Mutation {
+  toggleShuffleAnswers(quizId: Int!): Quiz!
+}

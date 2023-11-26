@@ -1,4 +1,12 @@
-import { Resolver, Query, ResolveField, Parent } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  ResolveField,
+  Parent,
+  Mutation,
+  Args,
+  Int,
+} from '@nestjs/graphql';
 import { Quiz } from './quiz.model';
 import { QuizzesService } from './quizzes.service';
 import { Question } from './models/quesion.model';
@@ -7,14 +15,21 @@ import { Question } from './models/quesion.model';
 export class QuizzesResolver {
   constructor(private readonly quizzesService: QuizzesService) {}
 
-  @Query((returns) => [Quiz])
+  @Query((_) => [Quiz])
   async quizzes() {
     return this.quizzesService.findAll();
   }
 
-  @ResolveField((returns) => [Question])
+  @ResolveField((_) => [Question])
   async questions(@Parent() quiz: Quiz) {
     const { id } = quiz;
     return this.quizzesService.questions(id);
+  }
+
+  @Mutation((_) => Quiz)
+  async toggleShuffleAnswers(
+    @Args({ name: 'quizId', type: () => Int }) quizId: number,
+  ) {
+    return this.quizzesService.toggleShuffleAnswers(quizId);
   }
 }
