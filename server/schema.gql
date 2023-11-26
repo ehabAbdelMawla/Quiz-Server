@@ -21,8 +21,20 @@ type Query {
 }
 
 type Mutation {
+  addQuiz(quiz: QuizInput!): Quiz!
+  updateQuiz(quiz: QuizInput!): Quiz!
   toggleShuffleAnswers(quizId: Int!): Quiz!
+  toggleShuffleQuestions(quizId: Int!): Quiz!
+  removeQuiz(quizId: Int!): Quiz!
   addQuestion(question: QuestionInput!): Question!
+}
+
+input QuizInput {
+  id: Int!
+  title: String!
+  description: String!
+  shuffleQuestions: Boolean!
+  shuffleAnswers: Boolean!
 }
 
 input QuestionInput {
