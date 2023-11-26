@@ -10,6 +10,7 @@ import {
 import { Quiz } from './quiz.model';
 import { QuizzesService } from './quizzes.service';
 import { Question } from './models/quesion.model';
+import { QuestionInput } from './InputsType/question.input';
 
 @Resolver((of) => Quiz)
 export class QuizzesResolver {
@@ -31,5 +32,10 @@ export class QuizzesResolver {
     @Args({ name: 'quizId', type: () => Int }) quizId: number,
   ) {
     return this.quizzesService.toggleShuffleAnswers(quizId);
+  }
+
+  @Mutation((_) => Question)
+  async addQuestion(@Args('question') question: QuestionInput) {
+    return this.quizzesService.addQuestion(question);
   }
 }

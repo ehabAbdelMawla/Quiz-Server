@@ -22,4 +22,11 @@ type Query {
 
 type Mutation {
   toggleShuffleAnswers(quizId: Int!): Quiz!
+  addQuestion(question: QuestionInput!): Question!
+}
+
+input QuestionInput {
+  quizId: Int!
+  text: String!
+  isMarkDown: Boolean!
 }

@@ -18,4 +18,15 @@ export class QuizzesService {
     quiz.shuffleAnswers = !quiz.shuffleAnswers;
     return quiz;
   }
+
+  addQuestion(question) {
+    const quiz = quizzes.find((quiz) => quiz.id === question.quizId);
+    const newQuestion = {
+      text: question.text,
+      isMarkDown: question.isMarkDown,
+    };
+
+    quiz.questions.push(newQuestion);
+    return newQuestion;
+  }
 }
