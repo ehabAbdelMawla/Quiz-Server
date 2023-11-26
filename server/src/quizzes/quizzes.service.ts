@@ -7,4 +7,9 @@ export class QuizzesService {
   findAll() {
     return quizzes;
   }
+
+  questions(quizId) {
+    const quiz = quizzes.find((quiz) => quiz.id === quizId);
+    return quiz.questions;
+  }
 }

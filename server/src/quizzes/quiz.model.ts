@@ -1,4 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { Question } from './models/quesion.model';
 
 @ObjectType()
 export class Quiz {
@@ -16,4 +17,7 @@ export class Quiz {
 
   @Field()
   readonly shuffleAnswers: boolean;
+
+  @Field((type) => [Question], { nullable: true })
+  readonly questions: Question[];
 }
