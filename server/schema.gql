@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Question {
+  text: String!
+  isMarkDown: Boolean
+}
+
+type Quiz {
+  id: Int!
+  title: String!
+  description: String!
+  shuffleQuestions: Boolean!
+  shuffleAnswers: Boolean!
+  questions: [Question!]
+}
+
+type Query {
+  quizzes: [Quiz!]!
+}
+
+type Mutation {
+  addQuiz(quiz: QuizInput!): Quiz!
+  updateQuiz(quiz: QuizInput!): Quiz!
+  toggleShuffleAnswers(quizId: Int!): Quiz!
+  toggleShuffleQuestions(quizId: Int!): Quiz!
+  removeQuiz(quizId: Int!): Quiz!
+  addQuestion(question: QuestionInput!): Question!
+}
+
+input QuizInput {
+  id: Int!
+  title: String!
+  description: String!
+  shuffleQuestions: Boolean!
+  shuffleAnswers: Boolean!
+}
+
+input QuestionInput {
+  quizId: Int!
+  text: String!
+  isMarkDown: Boolean!
+}
