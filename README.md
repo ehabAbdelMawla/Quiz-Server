@@ -1,73 +1,164 @@
+
+# GraphQL Quiz CRUD Example
+
+![img-removebg-preview](https://github.com/ehabAbdelMawla/Quiz-Server/assets/51888513/c6d5e5d7-f5c0-4e2e-9de3-d049ca39d2cf)
+
+
+This is a simple example of a CRUD (Create, Read, Update, Delete) quizzes application using GraphQL. The application stores quiz data in a JSON file and allows for basic operations through GraphQL queries and mutations.
+
+
+
+## Getting Started
+
+1. Clone the Repository:
+
+```bash
+git clone https://github.com/ehabAbdelMawla/Quiz-Server.git
+cd Quiz-Server
+```
+
+2. Clone the Repository:
+
+```bash
+npm install
+```
+
+3. Start the Application:
+
+```bash
+npm start
+```
+The GraphQL server will be accessible at http://localhost:3000/graphql.
+
+
+
+## GraphQL Operations
+
+1. Query All Quizzes
+```graphql
+query Quizzes {
+    quizzes {
+        description
+        shuffleQuestions
+        shuffleAnswers
+        questions {
+            text
+            isMarkDown
+        }
+        id
+        title
+    }
+}
+
+```
+
+1. Query All Quizzes
+```graphql
+query Quizzes {
+    quizzes {
+        description
+        shuffleQuestions
+        shuffleAnswers
+        questions {
+            text
+            isMarkDown
+        }
+        id
+        title
+    }
+}
+
+```
+2. Add Quiz
+```graphql
+mutation AddQuestion {
+    addQuiz(
+        quiz: {id: 10, title: "title", description: "description", shuffleQuestions: true, shuffleAnswers: true}
+    ) {
+        title
+        description
+        shuffleQuestions
+        shuffleAnswers
+        id
+    }
+}
+
+```
+3. Update Quiz
+```graphql
+mutation UpdateQuiz {
+    updateQuiz(
+        quiz: {id: 1, title: "Updated Title", description: "Updated Discription", shuffleQuestions: false, shuffleAnswers: false}
+    ) {
+        id
+        title
+        description
+        shuffleQuestions
+        shuffleAnswers
+    }
+}
+
+
+```
+4. Toggle Quiz Shuffle Answers
+```graphql
+mutation ToggleShuffleAnswers {
+    toggleShuffleAnswers(quizId: 3) {
+        id
+        title
+        description
+        shuffleQuestions
+        shuffleAnswers
+    }
+}
+
+
+```
+5. Toggle Quiz Shuffle Question
+```graphql
+mutation ToggleShuffleAnswers {
+    toggleShuffleQuestions(quizId: 1) {
+        id
+        title
+        description
+        shuffleQuestions
+        shuffleAnswers
+    }
+}
+
+
+```
+6. Remove Quiz
+```graphql
+mutation AddQuestion {
+    addQuiz(
+        quiz: {id: 10, title: "title", description: "description", shuffleQuestions: true, shuffleAnswers: true}
+    ) {
+        title
+        description
+        shuffleQuestions
+        shuffleAnswers
+        id
+    }
+}
+
+
+```
+
+ <!-- CONTACT -->
+## Contact
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+<a  href="mailto:eabdo1474@gmail.com">
+ <img src="https://user-images.githubusercontent.com/51888513/188922645-da22d955-0b02-46d9-8145-564b54316d87.png" width="50"/> 
+</a>
+<a href="https://www.youtube.com/channel/UCnoe7bD7w2fWYlNzqY3qjLA">
+<img src="https://user-images.githubusercontent.com/51888513/188924271-4554ab67-60b6-46db-9d38-b5d284bfc324.png" width="50"/>
+</a>
+<a href="https://www.linkedin.com/in/ehab-abdel-mawla-9b20aa183">
+<img src="https://user-images.githubusercontent.com/51888513/188924356-4578aa1f-26c0-4310-a16d-f4eb3c891b8d.png" width="50"/>
+</a>
+<a href="https://codepen.io/ehabAbdelMola"><img src="https://user-images.githubusercontent.com/51888513/188924374-5169b372-1eda-4639-95b7-ceacbe31b861.png"   width="50"/> </a>
+<a href="https://www.instagram.com/abdoehab4551/"><img src="https://user-images.githubusercontent.com/51888513/188924858-1b4bd316-4259-4f22-be15-0872c31ebc12.png"   width="50"/> </a>
+
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
